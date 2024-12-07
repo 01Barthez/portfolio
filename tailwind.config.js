@@ -36,6 +36,10 @@ module.exports = {
 					DEFAULT: 'hsl(var(--accent))',
 					foreground: 'hsl(var(--accent-foreground))',
 				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					foreground: 'hsl(var(--warning-foreground))',
+				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))',
@@ -51,6 +55,9 @@ module.exports = {
 					5: 'hsl(var(--chart-5))',
 				},
 			},
+			fontFamily: {
+				poppins: ["Poppins", "sans-serif"],
+			}
 		},
 	},
 	plugins: [require('tailwindcss-animate')],
