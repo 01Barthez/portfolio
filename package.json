@@ -1,0 +1,112 @@
+{
+  "name": "portfolio-bathez-kenwou",
+  "private": false,
+  "version": "0.1.1",
+  "description": "This portfolio showcases my skills and projects in Full-Stack web development. Explore works built with modern technologies like React, Node.js, and Tailwind CSS",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/01Barthez/portfolio"
+  },
+  "author": {
+    "name": "Barthez Kenwou",
+    "email": "kenwoubarthez@gmail.com",
+    "url": "https://github.com/01Barthez"
+  },
+  "license": "MIT",
+  "main": "index.html",
+  "keywords": [
+    "Barthez Kenwou",
+    "Portfolio",
+    "React",
+    "Shadcn",
+    "Aceternity",
+    "Typescript",
+    "Web Developer",
+    "Frontend Developer",
+    "Fullstack Developer",
+    "TailwindCSS"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=v20.18.1",
+    "yarn": ">=1.22.22",
+    "npm": ">=10.8.2",
+    "pnpm": ">=9.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "rimraf dist && vite build",
+    "start": "vite preview --port 3000",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "analyze": "vite build --report",
+    "clean": "rimraf dist",
+    "test": "echo 'pas encore de test pour le moment' && exit 0",
+    "ci": "yarn lint && yarn test && yarn build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-commit": "echo 'Commit successful!'"
+    }
+  },
+  "lint-staged": {
+    "*.{ts, js, tsx, jsx}": [
+      "tsc --noEmit",
+      "eslint --fix --max-warnings=10 --cache --config .eslintrc.json",
+      "prettier --write --config .prettierrc"
+    ]
+  },
+  "dependencies": {
+    "@radix-ui/react-dropdown-menu": "^2.1.2",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-toast": "^1.2.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "dotenv-safe": "^9.1.0",
+    "env-var": "^7.5.0",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet": "^6.1.0",
+    "react-helmet-async": "^2.0.5",
+    "react-router-dom": "^7.0.2",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "@types/babel__core": "^7.20.5",
+    "@types/dotenv-safe": "^8.1.6",
+    "@types/node": "^22.10.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/react-helmet": "^6.1.11",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/winston": "^2.4.4",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.12.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
+    "postcss": "^8.4.49",
+    "prettier": "^3.4.2",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^3.4.16",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.15.0",
+    "vite": "^6.0.1",
+    "vitest": "^2.1.8"
+  }
+}
