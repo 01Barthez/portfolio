@@ -1,0 +1,11 @@
+node_modules/
+dist/
+jest.config.ts
+.vscode
+*.log/
+*.logs/
+logs/
+.env
+.next/
+*.lock
+coverage/

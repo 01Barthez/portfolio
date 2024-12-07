@@ -1,0 +1,46 @@
+services:
+   # Set up Application of employee management
+   app:
+      build: . # Build the Docker image from the current directory
+      image: 01barthez/portfolio
+      ports:
+         - '3000:5173'
+      secrets:
+         - app_env
+      volumes:
+         - ./:/app
+         - ./logs:/app/logs
+      networks:
+         - portfolio
+      command: ['yarn', 'start']
+
+   # Set up nginx service as reverse proxy
+   nginx:
+      image: nginx:1.27.2-alpine-slim
+      restart: always
+      volumes:
+         - ./nginx-config:/etc/nginx/conf.d
+         - ./logs/nginx:/var/log/nginx
+      ports:
+         - '8080:80'
+      secrets:
+         - app_env
+      networks:
+         - portfolio
+      depends_on:
+         - app
+      healthcheck:
+         test: ['CMD', 'curl', '-f', 'http://localhost']
+         interval: 20s
+         timeout: 10s
+         retries: 3
+
+secrets:
+   app_env:
+      file: .env
+
+volumes:
+   nginx-config:
+
+networks:
+   portfolio:
